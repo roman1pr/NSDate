@@ -17,6 +17,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSDate *date = [NSDate date];
+    
+    NSLog(@"%@", date);
+    
+    NSLog(@"%@", [date dateByAddingTimeInterval:200]);
+    
+    NSDate* date2 = [NSDate dateWithTimeIntervalSinceNow:10];
+    
+    NSLog(@"%@", date2);
+    
+    NSDateFormatter* format = [[NSDateFormatter alloc] init];
+    
+    [format setDateStyle:NSDateFormatterShortStyle];
+    NSLog(@"%@", [format stringFromDate:date]);
+    
+    [format setDateStyle:NSDateFormatterMediumStyle];
+    NSLog(@"%@", [format stringFromDate:date]);
+    
+    [format setDateStyle:NSDateFormatterLongStyle];
+    NSLog(@"%@", [format stringFromDate:date]);
+    
+    [format setDateFormat:@"yyyy MM DD dd / MMM MMMM"];
+    NSLog(@"%@", [format stringFromDate:date2]);
+    
+    NSCalendar* calendar =  [NSCalendar currentCalendar];
+
+    
     return YES;
 }
 
